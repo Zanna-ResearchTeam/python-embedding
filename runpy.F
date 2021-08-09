@@ -1,10 +1,12 @@
 
 
-      Subroutine RunPy(PyScript, PyFunction, X, Nx)
+      Subroutine RunPy(PyScript, PyFunction, X, Nx, Y, Ny)
       Implicit None
       Character*(*) PyScript, PyFunction
       Real*8 X(*)
+      Real*8 Y(*)
       Integer Nx
+      Integer Ny
       
       Integer I, Len, LinEnd
       External LinEnd
@@ -20,7 +22,7 @@
       
       Call PyTest(PyScript, LenPyScript,
      $     PyFunction, LenPyFunction,
-     $     X, Nx)
+     $     X, Nx, Y, Ny)
       
       Return
       End

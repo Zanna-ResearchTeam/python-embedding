@@ -19,21 +19,29 @@
       Program Main
       Implicit None
       Integer Nx
-      Parameter(Nx = 15)
+      Integer NY
+      Parameter(Nx = 3200)
+      Parameter(Ny = 1600)
       Real*8 X(Nx)
+      Real*8 Y(Ny)
       Integer I
 
       Do I = 1, Nx
-         X(I) = DBLE(I)
+         X(I) = DBLE(I) / DBLE(100)
+      EndDo
+
+      Do I = 1, Ny
+         Y(I) = DBLE(0.)
       EndDo
       
-      Call PrintX(X, Nx)
+      Call PrintX(X, 10)
+      Call PrintX(Y, 10)
 
-      Do I = 1, 10
+      Do I = 1, 1
          Write(6, *)
          Write(6, *) 'Loop: ', I
-         Call RunPy('test.py', 'my_test', X, Nx)
-         Call PrintX(X, Nx)
+         Call RunPy('testNN.py', 'my_testNN', X, Nx, Y, Ny)
+         Call PrintX(Y, 10)
       EndDo
 
       Call PyFinalize
