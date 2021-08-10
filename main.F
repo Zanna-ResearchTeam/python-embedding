@@ -20,8 +20,8 @@
       Implicit None
       Integer Nx
       Integer NY
-      Parameter(Nx = 3200)
-      Parameter(Ny = 1600)
+      Parameter(Nx = 1250)
+      Parameter(Ny = 100)
       Real*8 X(Nx)
       Real*8 Y(Ny)
       Integer I
@@ -37,7 +37,7 @@
       Call PrintX(X, 10)
       Call PrintX(Y, 10)
 
-      Do I = 1, 1
+      Do I = 1, 10
          Write(6, *)
          Write(6, *) 'Loop: ', I
          Call RunPy('testNN.py', 'my_testNN', X, Nx, Y, Ny)

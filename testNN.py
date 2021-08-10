@@ -14,7 +14,7 @@ nn = nn.to(device=device)
 
 def my_testNN(x, y):
     print(x[:10])
-    x = x.reshape((1, 2, 40, 40), order='F')
+    x = x.reshape((1, 2, 25, 25), order='F')
     x = x.astype(numpy.float32)
     x = torch.tensor(x).to(device=device)
     with torch.no_grad():
@@ -53,10 +53,10 @@ def my_test2() :
 if __name__ == '__main__':
     import numpy as np
     import torch
-    x = np.arange(1, 3201).astype(numpy.float32)
+    x = np.arange(1, 1251).astype(numpy.float32)
     x = x / 100
     print(x[:10])
-    x = x.reshape((1, 2, 40, 40), order='F')
+    x = x.reshape((1, 2, 25, 25), order='F')
     x = torch.tensor(x)
     x = x.to(device=device)
     with torch.no_grad():
