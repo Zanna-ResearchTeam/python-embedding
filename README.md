@@ -8,3 +8,7 @@ At the moment both the input and output must have a fixed size. In Fortran they 
 reshaping of the input happens in python code. Similarly the ouput is flattenned (in Fortran order)
 before being copied to y's memory. 
 
+To run the code with the nn you also need to 
+- create a conda environment using the provided environment.yaml
+- download the subgrid package (where the structure of the nn is defined) from Laure's repository and add /mypath/ to your PYTHONPATH if subgrid is in /mypath/
+- You will also need to update the MakeFile to put the correct paths for python and numpy
