@@ -7,19 +7,17 @@ import numpy
 import subgrid
 
 #load the neural network
-device = torch.device("cuda:0")
-nn = subgrid.load_paper_net()
-nn = nn.to(device=device)
+nn = subgrid.load_paper_net('cpu')
 
 
 def my_testNN(x, y):
     print(x[:10])
     x = x.reshape((1, 2, 25, 25), order='F')
     x = x.astype(numpy.float32)
-    x = torch.tensor(x).to(device=device)
+    x = torch.tensor(x)
     with torch.no_grad():
         out = nn(x)
-    out = out.cpu().numpy().astype(numpy.float64)
+    out = out.numpy().astype(numpy.float64)
     out = out.flatten(order='F')
     print(out[:10])
     y[:] = out[:]
@@ -58,10 +56,9 @@ if __name__ == '__main__':
     print(x[:10])
     x = x.reshape((1, 2, 25, 25), order='F')
     x = torch.tensor(x)
-    x = x.to(device=device)
     with torch.no_grad():
         out = nn(x)
-    out = out.cpu().numpy()
+    out = out.numpy()
     out = out.flatten(order='F')
     print("BEGINNING OF PYTHON")
     print(out[:10])
