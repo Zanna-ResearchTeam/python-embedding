@@ -17,4 +17,4 @@ The package can be found here: https://github.com/Zanna-ResearchTeam/subgrid
 
 LZ comment Aug 13: The weights for the network are saved in 2 different files:  
 - ... has the weights from all layers, but the last one
--  ... has the weights for the last layer. 
+- final_transformation.pth:  has the weights for the last layer. 
