@@ -13,3 +13,8 @@ To run the code with the nn you also need to
 - download the subgrid package (where the structure of the nn is defined) from Laure's repository and add /mypath/ to your PYTHONPATH if subgrid is in /mypath/
 The package can be found here: https://github.com/Zanna-ResearchTeam/subgrid 
 - You will also need to update the MakeFile to put the correct paths for python and numpy
+
+
+LZ comment Aug 13: The weights for the network are saved in 2 different files:  
+- ... has the weights from all layers, but the last one
+-  ... has the weights for the last layer. 
